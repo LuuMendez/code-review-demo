@@ -4,7 +4,4 @@ rules:
     severity: ERROR
     languages:
       - csharp
-    paths:
-      include:
-        - src/**/*.cs
     pattern: Process.Start(..., $ARGUMENTS)
