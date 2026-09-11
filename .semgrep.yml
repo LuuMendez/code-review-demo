@@ -1,0 +1,7 @@
+rules:
+  - id: command-injection-from-query
+    message: "Possible command injection: user-controlled input is used to construct an operating system command."
+    severity: ERROR
+    languages:
+      - csharp
+    pattern: Process.Start(..., $ARGUMENTS)
