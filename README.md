@@ -20,7 +20,7 @@ curl "http://localhost:5000/shipping?total=100"
 dotnet restore
 dotnet build
 dotnet test
-semgrep --config .semgrep.yml .
+semgrep --error --config .semgrep.yml .
 ```
 
 En `main`, los cuatro comandos pasan. En `demo/code-review`, cada job de CI muestra un problema intencional distinto.

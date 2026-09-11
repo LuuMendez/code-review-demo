@@ -11,7 +11,7 @@
    dotnet restore
    dotnet build
    dotnet test
-   semgrep --config .semgrep.yml .
+   semgrep --error --config .semgrep.yml .
    ```
 
 4. Crear el PR. En la pestaña **Checks** deberían aparecer tres jobs separados: `quality`, `tests` y `security`, todos fallidos en la branch de demostración.
@@ -34,7 +34,7 @@ En `demo/code-review`:
 2. Eliminar la variable no utilizada (o usarla correctamente).
 3. Eliminar el endpoint inseguro o reemplazar la ejecución de comandos por una implementación que no construya comandos con entrada del usuario.
 
-Ejecutar otra vez `dotnet build`, `dotnet test` y `semgrep --config .semgrep.yml .`. Al actualizar el PR, deberían quedar `quality`, `tests` y `security` en verde.
+Ejecutar otra vez `dotnet build`, `dotnet test` y `semgrep --error --config .semgrep.yml .`. Al actualizar el PR, deberían quedar `quality`, `tests` y `security` en verde.
 
 ## Agregar revisión asistida por IA
 
