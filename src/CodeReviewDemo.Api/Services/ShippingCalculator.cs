@@ -4,6 +4,6 @@ public class ShippingCalculator
 {
     public decimal CalculateShipping(decimal orderTotal)
     {
-        return orderTotal > 100 ? 0 : 10;
+        return orderTotal >= 100 ? 0 : 10;
     }
 }
