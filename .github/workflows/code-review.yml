@@ -37,11 +37,4 @@ jobs:
         with:
           python-version: '3.x'
       - run: python -m pip install semgrep==1.136.0
-      - run: semgrep --config .semgrep.yml src || true
-      - run: |
-          if grep -R "Process.Start" -n src; then
-            echo "Unsafe Process.Start usage found in source files."
-            exit 1
-          fi
-
-          echo "No unsafe Process.Start usage found in source files."
+      - run: semgrep --error --config .semgrep.yml src
